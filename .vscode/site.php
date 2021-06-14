@@ -223,10 +223,129 @@
 
     </br>
     </br>
+    
+    <?php
+
+        function greet($name) {
+        return "Hello, $name how are you doing today?";
+        };
+
+        echo greet("Rian");
+    ?>
+
+    </br>
+    </br>
 
     <!--***************IF STATEMENTS*************** -->
 
+    <?php
     
+        $isMale = false;
+        $isTall = false;
+        if ($isMale && $isTall) {
+            echo "You are a tall male";
+        } elseif ($isMale && !$isTall) {
+            echo "You are a short male";
+        } elseif (!$isMale && $isTall) {
+            echo "You are not male but you are tall";
+        } else {
+            echo "You are not male and you are not tall";
+        }
+    
+        /* || is or like in JavaScript*/
+
+    ?>
+
+    </br>
+    </br>
+
+    <?php
+        echo max(3,6);
+
+        echo "</br>";
+        echo "</br>";
+
+        function getMax($first, $second, $third) {
+            if ($first >= $second && $first >= $third ) {
+                return $first;
+            } elseif ($second >= $first && $second >= $third) {
+                return $second;
+            } else {
+                return $third;
+            } 
+        }
+
+       echo getMax (999, 999, 592)
+
+    ?>
+
+    <!-- BUILDING A CALCULATOR -->
+
+    <form action="site.php" method="post">
+        num1<input type="number" step="0.001" name="num1"> <br>
+        operator<input type="text" name="operator"> <br>
+        num2<input type="number" step="0.001" name="num2"> <br>
+        
+
+        <input type="submit">
+    
+    </form>
+    
+    <?php
+        $num1 = $_POST["num1"];
+        $operator = $_POST["operator"];
+        $num2 = $_POST["num2"];
+
+        if($operator=="+"){
+            echo $num1+$num2;
+            }elseif($operator=="-"){
+            echo $num1-$num2;
+            }elseif($operator=="*"){
+            echo $num1*$num2; 
+            }elseif($operator=="/"){
+            echo $num1/$num2;
+            }else{
+            echo "this is not a valid operator";
+            }
+
+            echo "</br>";
+            echo "</br>";
+
+    ?>
+
+       <!-- SWITCH STATEMENT -->
+
+        <form action="site.php" method="post">
+            What was the grade?
+            <input type="text" name="myGrade"> <br>
+
+            <input type="submit">
+        </form>
+
+        <?php
+            $grade = $_POST["myGrade"];
+            // echo $grade;
+
+            switch($grade){
+                case "A":
+                    echo "You did amazing!";
+                    break;
+                case "B":
+                    echo "Not so bad!";
+                    break;
+                case "C":
+                    echo "Could be better!";
+                default:
+                    echo "You enetered an invalid grade.";   
+            }
+        ?>
+
+       <!-- *************WHILE LOOPS************** -->
+
+        <?php
+
+            
+        ?>
 
 </html>
 
